@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+:root{
+    --clr-VeryDarkCyan : hsl(183, 100%, 15%);
+    --clr-Darkgrayishcyan: hsl(186, 14%, 43%);
+    --clr-Grayishcyan: hsl(184, 14%, 56%);
+    --clr-Lightgrayishcyan: hsl(185, 41%, 84%);
+    --clr-Verylightgrayishcyan: hsl(189, 41%, 97%);
+    --clr-White: hsl(0, 0%, 100%);
+
+    --clr-StrongCyan:hsl(172, 67%, 45%);
+
+    --fs-input:24px;
+
+    --fw-700:700;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 90vh;
+    gap: 4rem;
+    background-color: var(--clr-Lightgrayishcyan);
+    font-family: 'Space Mono', monospace;
+}
+.container{
+    background-color: var(--clr-White);
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 3rem;
+    padding: 2rem;
+    border-radius: 20px;
+}
+.container .left{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.container .left >label{
+    color:var(--clr-Darkgrayishcyan);
+    margin-bottom: 10px;
+}
+.container .left .inp{
+    border: none;
+    outline: none;
+    padding:10px 20px;
+    background-color: var(--clr-Verylightgrayishcyan);
+    text-align: right;
+    color: var(--clr-VeryDarkCyan);
+    font-size: var(--fs-input);
+    border-radius: 10px;
+    font-family: 'Space Mono',monospace;
+    cursor: pointer;
+}
+.container .left .inp:focus{
+    outline: 2px solid var(--clr-StrongCyan);
+}
+.container .left .inp:focus::placeholder{
+    visibility: hidden;
+}
+.container .left .img{
+    position: relative;
+    top:-35px;
+    left:15px;
+    cursor: pointer;
+}
+.container .left .tips{
+    display: grid;
+    gap:10px;
+    grid-template-columns: repeat(3,1fr);
+    margin-block: 1.75rem;
+}
+.container .left .tips .vals{
+    border: none;
+    outline: none;
+    background-color: var(--clr-VeryDarkCyan);
+    color: var(--clr-White);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: 'Space Mono',monospace;
+    font-size: 20px;
+    cursor: pointer;
+}
+.container .left .tips > button:hover{
+    background-color: var(--clr-Lightgrayishcyan);
+    color: var(--clr-VeryDarkCyan);
+}
+.container .left .vals.select{
+    background-color: var(--clr-StrongCyan);
+    color: var(--clr-VeryDarkCyan);
+}
+.container .left .tips .custom{
+    background-color: var(--clr-Verylightgrayishcyan);
+    color: var(--clr-VeryDarkCyan);
+    font-family: 'Space Mono',monospace;
+    text-align: center;
+    border-radius: 5px;
+    width: 120px;
+    padding: 5px;
+    border: none;
+    outline: none;
+    font-size: 22px;
+}
+.container .left .tips .custom:focus{
+    outline: 2px solid var(--clr-StrongCyan);
+    text-align: right;
+}
+.custom:focus::placeholder{
+    color: transparent;
+}
+.container .left .p{
+    display: none;
+    color: red;
+    font-size: 14px;
+    position: absolute;
+    left: 18.75rem;
+    bottom: 65px;
+}
+.container .left .p.active{
+    display: block;
+}
+.container .left .zero.valid:focus{
+    outline: 2px solid red;
+}
+.container .right{
+    background-color: var(--clr-VeryDarkCyan);
+    padding: 2rem;
+    width: 22rem;
+    border-radius: 15px;
+    position: relative;
+}
+.container .right .reset{
+    position: absolute;
+    bottom: 2rem;
+    width: 84%;
+    font-size: 15px;
+    font-weight: var(--fw-700);
+    background-color: var(--clr-StrongCyan);
+    border-radius: 5px;
+    padding-block: 1em;
+    color: var(--clr-VeryDarkCyan);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.container .right .reset:hover{
+    background-color: var(--clr-Lightgrayishcyan);
+}
+.amount,.tot{
+    display: flex;
+    height: fit-content;
+    justify-content: space-between;
+}
+.amount h4,.tot h4{
+    color: var(--clr-Verylightgrayishcyan);
+    margin-block: 15px;
+}
+.amount span,.tot span{
+    color: var(--clr-Grayishcyan);
+    font-size: 12px;
+}
+.amount h1,.tot h1{
+    color: var(--clr-StrongCyan);
+    font-size: 45px;
+    margin-block: 0px;
+} 
+
+@media (max-width:720px){
+    .logo{
+        margin-top: 2rem;
+    }
+    .container{
+        width:90%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+    }
+    .container .left .tips{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .container .left .tips .custom{
+        width: 95%
+    }
+    .container .right {
+        width: 88%;
+        height: 15rem;
+    }
+    .container .right .reset{
+        width: 88%;
+    }
+}
